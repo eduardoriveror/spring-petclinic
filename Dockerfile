@@ -7,6 +7,9 @@ MAINTAINER eduardoriveror@gmail.com
 #Copiar el archivo compilado en el primer paso
 COPY target/spring-petclinic-1.5.1.war $CATALINA_HOME/webapps/
 
+#Copiar archivo de servicio tomcat
+COPY tomcat.service /etc/systemd/system/
+
 #Iniciar servicio Tomcat
 RUN sh $CATALINA_HOME/bin/startup.sh
 
