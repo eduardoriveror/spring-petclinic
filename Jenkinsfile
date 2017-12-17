@@ -8,7 +8,7 @@ pipeline {
 stages {
         stage('build') {
             steps {
-                sh 'cd spring-petclinic && mvn clean && mvn compile && mvn package'
+                sh 'mvn clean && mvn compile && mvn package'
             }
         }
     }
