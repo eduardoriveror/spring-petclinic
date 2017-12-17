@@ -1,5 +1,5 @@
 #Imagen Base
-FROM tomcat:8.0.48	
+FROM tomcat:9.0.2	
 
 #Encargado del mantenimiento
 MAINTAINER eduardoriveror@gmail.com
