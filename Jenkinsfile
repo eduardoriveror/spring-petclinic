@@ -8,9 +8,7 @@ pipeline {
 stages {
         stage('build') {
             steps {
-                sh 'git clone git@github.com:eduardoriveror/spring-petclinic.git'
-                sh 'cd spring-petclinic'
-                sh 'mvn clean & mvn compile & mvn package'
+                sh 'cd spring-petclinic && mvn clean && mvn compile && mvn package'
             }
         }
     }
