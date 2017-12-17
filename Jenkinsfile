@@ -15,10 +15,13 @@ stages {
             agent {
                 docker {
                     image 'tomcat:8.0.48'
+                    args '-d'
                 }
             }
             steps{
-                sh 'echo "$TOMCAT_HOME" || echo "CATALINA_HOME"'
+                sh 'cp target/spring-petclinic-1.5.1.war $TOMCAT_HOME/webapps/ && echo "Copia realizada"'
+                sh 'systemctl start tomcat'
+                sh 'sleep 3m'
             }    
         }
     }
