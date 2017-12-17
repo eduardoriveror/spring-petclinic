@@ -12,16 +12,16 @@ stages {
             }
         }
         stage('Deploy') {
-            agent {
-                docker {
-                    image 'tomcat:8.0.48'
-                    args '-d'
-                }
-            }
+//            agent {
+//                docker {
+//                    image 'tomcat:8.0.48'
+//                    args '-d'
+//                }
+//            }
             steps{
-                sh 'cp target/spring-petclinic-1.5.1.war $TOMCAT_HOME/webapps/ && echo "Copia realizada"'
-                sh 'systemctl start tomcat'
-                sh 'sleep 3m'
+                sh 'docker-compose up -d'
+//                sh 'systemctl start tomcat'
+//                sh 'sleep 3m'
             }    
         }
     }
