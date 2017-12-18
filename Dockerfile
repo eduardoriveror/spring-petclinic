@@ -8,7 +8,8 @@ MAINTAINER eduardoriveror@gmail.com
 COPY target/spring-petclinic-1.5.1.war $CATALINA_HOME/webapps/
 
 #Iniciar servicio Tomcat
-RUN sh $CATALINA_HOME/bin/shutdown.sh && $CATALINA_HOME/bin/startup.sh
+RUN sh $CATALINA_HOME/bin/shutdown.sh
+RUN sh $CATALINA_HOME/bin/startup.sh
 
 #Publicar el puerto de tomcat
 EXPOSE 8080

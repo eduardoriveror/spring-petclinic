@@ -7,18 +7,18 @@ stages {
         stage('build') {
             agent {
                 docker {
-                    image 'maven:3.5.2-jdk-8'
+                    image 'java:8-jdk'
                 }
             }
             steps {
-                sh 'mvn clean && mvn compile war:war' // https://maven.apache.org/plugins/maven-war-plugin/usage.html
+                sh 'cd spring-petclinic && sh mvnw spring-boot:run' 
             }
         }
-        stage('Deploy') {
-            agent any
-            steps {
-                sh 'docker-compose -p ${PROJECTNAME} up -d'
-            }    
-        }
+//        stage('Deploy') {
+//            agent any
+//            steps {
+//                sh 'docker-compose -p ${PROJECTNAME} up -d'
+//            }    
+//        }
     }
 }
