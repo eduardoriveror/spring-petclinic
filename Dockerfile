@@ -5,7 +5,7 @@ FROM tomcat:9.0.2
 MAINTAINER eduardoriveror@gmail.com
 
 #Copiar el archivo compilado en el primer paso
-COPY target/spring-petclinic-1.5.1.war $CATALINA_HOME/webapps/ROOT.war
+COPY target/spring-petclinic-1.5.1.war $CATALINA_HOME/webapps/
 
 #Iniciar servicio Tomcat
 RUN sh $CATALINA_HOME/bin/shutdown.sh && $CATALINA_HOME/bin/startup.sh
